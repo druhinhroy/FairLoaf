@@ -13,15 +13,16 @@ css/font-awesome.min.css">
 <body>
   <section class = "header">
     <nav>
-      <a href = "index.html"><img src="images/logo.jpg" width = "50" height = "50"></a>
+      <a href = "index.html"><img src="images/logo.png" width = "50" height = "50"></a>
       <div class = "nav-links" id = "navLinks">
         <i class = "fa fa-times" onclick = "hideMenu()"></i>
         <ul>
           <li><a href = "index.html">HOME</a></li>
           <li><a href = "aboutus.html">ABOUT US</a></li>
-          <li><a href = "">CONTACT</a></li>
+          <li><a href = "contact.html">CONTACT</a></li>
           <li><a href = "locations.html">LOCATIONS</a></li>
         </ul>
+        <hr>
       </div>
       <i class="fa fa-bars" onclick = "showMenu()"></i>
     </nav>
@@ -32,6 +33,33 @@ css/font-awesome.min.css">
         citizens of Austin. <br>Find out near activity of such allergens to keep your day safe!
       </p>
       <a href="info.html" class = "hero-btn">Click here to learn more</a>
+    </div>
+  </section>
+
+  <section class = "allergens">
+    <h1>Common Allergens</h1>
+    <p>Learn more about common allergens in Austin!</p>
+
+    <div class = "row">
+      <br><br>
+      <div class = "allergens-col">
+        <img src = "images/pollen.jpg">
+        <div class = "layer">
+          <h3>Pollen</h3>
+        </div>
+      </div>
+      <div class = "allergens-col">
+        <img src = "images/cedar.jpg">
+        <div class = "layer">
+          <h3>Cedar</h3>
+        </div>
+      </div>
+      <div class = "allergens-col">
+        <img src = "images/mold.jpg">
+        <div class = "layer">
+          <h3>Mold</h3>
+        </div>
+      </div>
     </div>
   </section>
   <script src="main.js"></script>
