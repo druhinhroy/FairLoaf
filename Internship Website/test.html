@@ -13,9 +13,9 @@ css/font-awesome.min.css">
 <body>
   <section class = "header">
     <nav>
-        <a href = "index.html"><img src="images/logo.png" width = "50" height = "50"></a>
+      <a href="index.html"><img src="images/logo.jpg" width = "50" height = "50"></a>
       <div class = "nav-links" id = "navLinks">
-        <i class = "fa fa-times" onclick = "hideMenu()"></i>
+        <i class="fa fa-times" onclick = "hideMenu()"></i>
         <ul>
           <li><a href = "index.html">HOME</a></li>
           <li><a href = "aboutus.html">ABOUT US</a></li>
@@ -23,14 +23,17 @@ css/font-awesome.min.css">
           <li><a href = "locations.html">LOCATIONS</a></li>
           <li><a href="test.html">WEB TEST</a></li>
         </ul>
-        <hr>
       </div>
       <i class="fa fa-bars" onclick = "showMenu()"></i>
     </nav>
     <div class="text-box">
-      <h1>Contact Us</h1>
-      <a>Contact us with the following email for any questions or concerns you may have!<br></a>
-      <a href = "mailto:jim@rock.com">FairLoaf@gmail.com</a>
+      <h1>Today's Allergy Data from KVUE</h1>
+      <button onclick="webScrape()">Web Scrape</button>
+      <script>
+          function webScrape() {
+              alert("button clicked!")
+          }
+      </script>
     </div>
   </section>
   <script src="main.js"></script>
