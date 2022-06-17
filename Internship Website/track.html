@@ -13,9 +13,9 @@ css/font-awesome.min.css">
 <body>
   <section class = "header">
     <nav>
-      <a href="index.html"><img src="images/logo.jpg" width = "50" height = "50"></a>
+        <a href = "index.html"><img src="images/logo.png" width = "50" height = "50"></a>
       <div class = "nav-links" id = "navLinks">
-        <i class="fa fa-times" onclick = "hideMenu()"></i>
+        <i class = "fa fa-times" onclick = "hideMenu()"></i>
         <ul>
           <li><a href = "index.html">HOME</a></li>
           <li><a href = "aboutus.html">ABOUT US</a></li>
@@ -25,19 +25,29 @@ css/font-awesome.min.css">
           <li><a href = "test.html">TRACK</a></li>
           <li><a href = "test.html">WEB TEST</a></li>
         </ul>
+        <hr>
       </div>
       <i class="fa fa-bars" onclick = "showMenu()"></i>
     </nav>
     <div class="text-box">
-      <h1>Today's Allergy Data from KVUE</h1>
-      <button onclick="webScrape()">Web Scrape</button>
-      <script>
-          function webScrape() {
-              alert("button clicked!")
-          }
-      </script>
+      <h1>Local Allergy Clinics</h1>
+    </section>
+    <section class = "main">
+      <div class="row">
+        <div class="locations-col">
+          <p>
+            Name
+            Address
+            Number
+            Specific Allergies
+            Website Link
+        </p>
+        </div>
     </div>
   </section>
   <script src="main.js"></script>
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initMap">
+</script>
 </body>
 </html>
