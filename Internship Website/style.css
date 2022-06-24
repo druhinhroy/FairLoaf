@@ -286,3 +286,22 @@ nav .fa
 {
   background: rgba(255, 136, 0, 0.671);
 }
+
+#container
+{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+#map
+{
+  height: 80vh;
+  width: 80vh;
+}
+
+html, body
+{
+  margin: 0;
+  padding: 0;
+}
