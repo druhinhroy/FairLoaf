@@ -1,23 +1,69 @@
 <html lang="en">
+
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Homepage</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="background.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
-rel="stylesheet">
-<link rel="stylesheet" href = "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/
 css/font-awesome.min.css">
+  <script type="text/javascript">
+    x = navigator.geolocation;
+    x.getCurrentPosition(success, failure);
+    function success(position) {
+      var myLat = position.coords.latitude;
+      var myLong = position.coords.longitude;
+      var coords = new google.maps.LatLng(myLat, myLong);
+      var mapOptions =
+      {
+        center: new google.maps.LatLng(coords),
+        zoom: 12
+      }
+      var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+      var markerOptions =
+      {
+        position: new google.maps.LatLng(coords),
+        map: map,
+        icon: href = "images/usermarker.jpg",
+        animation: google.maps.Animation.DROP
+      }
+      var marker = new google.maps.Marker(markerOptions);
+      var infowindow = new google.maps.InfoWindow();
+      map.data.addListener('click', function (event) {
+        var name = "<h1 id='name'>asd</h1>"
+        var address = event.feature.getProperty("Address");
+        var number = event.feature.getProperty("Website");
+        var website = event.feature.getProperty("Phone Number");
+        infowindow.setPosition(event.feature.getGeometry().get());
+        infowindow.setOptions({ pixelOffset: new google.maps.Size(0, -30) });
+        infowindow.open(map);
+      });
+      map.data.loadGeoJson("fixedlocations.geojson")
+    }
+    function failure() {
+      var mapOptions =
+      {
+        center: new google.maps.LatLng("30.2672", "-97.7431"),
+        zoom: 12
+      }
+      var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+      map.data.loadGeoJson("fixedlocations.geojson")
+      alert("We can't access your location!")
+    }
+  </script>
 </head>
+
 <body>
-  <section class = "header">
+  <section class="header">
     <nav>
-        <a href = "index.html"><img src="images/logo.png" width = "50" height = "50"></a>
-      <div class = "nav-links" id = "navLinks">
-        <i class = "fa fa-times" onclick = "hideMenu()"></i>
+      <a href="index.html"><img src="images/logo.jpg" width="50" height="50"></a>
+      <div class="nav-links" id="navLinks">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
         <ul>
+<<<<<<< Updated upstream
           <li><a href = "index.html">HOME</a></li>
           <li><a href = "aboutus.html">ABOUT US</a></li>
           <li><a href = "allergeninformation.html">ALLERGEN INFORMATION</a></li>
@@ -25,30 +71,41 @@ css/font-awesome.min.css">
           <li><a href = "locations.html">LOCATIONS</a></li>
           <li><a href = "track.html">TRACK</a></li>
           <li><a href = "test.html">SIGN UP</a></li>
+=======
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="aboutus.html">ABOUT US</a></li>
+          <li><a href="allergeninformation.html">ALLERGEN INFORMATION</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+          <li><a href="locations.html">LOCATIONS</a></li>
+          <li><a href="test.html">WEB TEST</a></li>
+>>>>>>> Stashed changes
         </ul>
         <hr>
       </div>
-      <i class="fa fa-bars" onclick = "showMenu()"></i>
+      <i class="fa fa-bars" onclick="showMenu()"></i>
     </nav>
     <div class="text-box">
       <h1>Local Allergy Clinics</h1>
-    </section>
-    <section class = "main">
-      <div class="row">
-        <div class="locations-col">
-          <p>
-            Name
-            Address
-            Number
-            Specific Allergies
-            Website Link
+  </section>
+  <section class="main">
+    <div class="row">
+      <div class="locations-col">
+        <p>
+          Name
+          Address
+          Number
+          Specific Allergies
+          Website Link
+          <br>
         </p>
-        </div>
+      </div>
+      <div id="map"></div>
     </div>
   </section>
   <script src="main.js"></script>
   <script async
-    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initMap">
-</script>
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDflio94XJ_G_wOGtXVapVc2HsPq3VHI7c&libraries=places&callback=initMap">
+    </script>
 </body>
+
 </html>
