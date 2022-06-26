@@ -134,7 +134,7 @@ nav .fa
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(250, 123, 4, 0.6);
+  background: rgba(35, 102, 8, 0.6);
   color: #ffffff;
   opacity: 0;
   transition: opacity 0.25s;
@@ -142,7 +142,7 @@ nav .fa
 
 .image__ov--blur
 {
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(1px);
 }
 
 .image__ov > *
@@ -163,7 +163,7 @@ nav .fa
 
 .image__title
 {
-  font-size: 2em;
+  font-size: 2.5em;
   font-weight: bold;
 }
 
