@@ -27,11 +27,12 @@ css/font-awesome.min.css">
         num = event.feature.getProperty('Website');
         web = event.feature.getProperty('Phone Number');
         if (web.includes(".com")) {
-          infowindow.setContent("<h1>" + name + "</h1>" + "<a>" + addy + "<br></a>" + "<a>" + num + "<br></a>" + "<a href = 'web'>" + web + "<br></a>");
+          infowindow.setContent("<h1 style='font-size: 15px; color: #000000'>" + name + "</h1>" + "<a style='color: #000000'>" + addy + "<br></a>" + "<a style='color: #000000'>" + num + "<br></a>" + "<a href = 'web'>" + web + "<br></a>");
         }
         else {
-          infowindow.setContent("<h1>" + name + "</h1>" + "<a>" + addy + "<br></a>" + "<a>" + num + "<br></a>");
+          infowindow.setContent("<h1 style='font-size: 15px; color: #000000'>" + name + "</h1>" + "<a style='color: #000000'>" + addy + "<br></a>" + "<a style='color: #000000'>" + num + "<br></a>");
         }
+        infowindow.setOptions()
         infowindow.setPosition(event.feature.getGeometry().get());
         infowindow.setOptions({ pixelOffset: new google.maps.Size(0, -30) });
         infowindow.open(map);
@@ -65,10 +66,10 @@ css/font-awesome.min.css">
         num = event.feature.getProperty('Website');
         web = event.feature.getProperty('Phone Number');
         if (web.includes(".com")) {
-          infowindow.setContent("<h1>" + name + "</h1>" + "<a>" + addy + "<br></a>" + "<a>" + num + "<br></a>" + "<a href = 'web'>" + web + "<br></a>");
+          infowindow.setContent("<h1 style='font-size: 15px; color: #000000'>" + name + "</h1>" + "<a style='color: #000000'>" + addy + "<br></a>" + "<a style='color: #000000'>" + num + "<br></a>" + "<a href = 'web'>" + web + "<br></a>");
         }
         else {
-          infowindow.setContent("<h1>" + name + "</h1>" + "<a>" + addy + "<br></a>" + "<a>" + num + "<br></a>");
+          infowindow.setContent("<h1 style='font-size: 15px; color: #000000'>" + name + "</h1>" + "<a style='color: #000000'>" + addy + "<br></a>" + "<a style='color: #000000'>" + num + "<br></a>");
         }
         infowindow.setPosition(event.feature.getGeometry().get());
         infowindow.setOptions({ pixelOffset: new google.maps.Size(0, -30) });
@@ -77,30 +78,6 @@ css/font-awesome.min.css">
       map.data.loadGeoJson("fixedlocations.geojson")
     }
     function failure() {
-      var mapOptions =
-      {
-        center: new google.maps.LatLng("30.2672", "-97.7431"),
-        zoom: 12
-      }
-      var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-      map.data.loadGeoJson("fixedlocations.geojson")
-      var infowindow = new google.maps.InfoWindow();
-      map.data.addListener('click', function (event) {
-        ;
-        name = event.feature.getProperty('Name');
-        addy = event.feature.getProperty('Address');
-        num = event.feature.getProperty('Website');
-        web = event.feature.getProperty('Phone Number');
-        if (web.includes(".com")) {
-          infowindow.setContent("<h1>" + name + "</h1>" + "<a>" + addy + "<br></a>" + "<a>" + num + "<br></a>" + "<a href = 'web'>" + web + "<br></a>");
-        }
-        else {
-          infowindow.setContent("<h1>" + name + "</h1>" + "<a>" + addy + "<br></a>" + "<a>" + num + "<br></a>");
-        }
-        infowindow.setPosition(event.feature.getGeometry().get());
-        infowindow.setOptions({ pixelOffset: new google.maps.Size(0, -30) });
-        infowindow.open(map);
-      });
       alert("We can't access your location!")
     }
   </script>
