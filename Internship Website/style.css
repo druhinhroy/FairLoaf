@@ -298,6 +298,7 @@ nav .fa
 {
   height: 80vh;
   width: 80vh;
+  margin: auto;
 }
 
 html, body
@@ -305,3 +306,4 @@ html, body
   margin: 0;
   padding: 0;
 }
+
