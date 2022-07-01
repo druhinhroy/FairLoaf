@@ -126,9 +126,44 @@ nav img
   text-align: center;
 }
 
+text-box10
+{
+  width: 90%;
+  color: #fff;
+}
+
+.text-box10 h1 {
+  color: #fff;
+  position: relative;
+  text-align: center;
+  margin-right: -0px;
+  margin-top: 30px;
+  font-size: 62px;
+}
+
+.text-box10 h2 {
+  color: #fff;
+  text-align: right;
+  position: relative;
+  margin-right: 240px;
+  margin-top: -626px;
+  font-size: 40px;
+}
+
+.text-box10 h6 {
+  color: #fff;
+  text-align: left;
+  position: relative;
+  margin-left: 800px;
+  margin-right: 260px;
+  margin-top: 40px;
+  font-size: 20px;
+}
+
 .text-box h1
 {
   font-size: 62px;
+  position: static;
 }
 
 .text-box h3
@@ -138,9 +173,10 @@ nav img
 
 .text-box p
 {
-  margin: 30px 0 40px;
+  margin: 30px 0px 40px;
   font-size: 18px;
   color: #fff;
+  line-height: 35px;
 }
 
 .hero-btn
@@ -367,7 +403,7 @@ nav .fa
 {
   height: 80vh;
   width: 80vh;
-  margin: auto;
+  margin: 40px;
 }
 
 html, body

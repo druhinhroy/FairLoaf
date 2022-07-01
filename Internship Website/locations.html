@@ -47,7 +47,7 @@ css/font-awesome.min.css">
       var mapOptions =
       {
         center: new google.maps.LatLng(coords),
-        zoom: 14
+        zoom: 12
       }
       var map = new google.maps.Map(document.getElementById("map"), mapOptions);
       var markerOptions =
@@ -74,12 +74,209 @@ css/font-awesome.min.css">
         infowindow.setPosition(event.feature.getGeometry().get());
         infowindow.setOptions({ pixelOffset: new google.maps.Size(0, -30) });
         infowindow.open(map);
+        
       });
       map.data.loadGeoJson("fixedlocations.geojson")
+      const clinics = [{"coordinates": [-97.704253, 30.408196], "Name": "Neha Reshamwala MD. Frontier Allergy Asthma and Immunology", "Address": "2217 Park Bend Dr Suite 300, Austin, TX 78758", "Phone Number": "(512) 382-1933", "Website": "https://www.frontierallergist.com/"},
+{"coordinates": [-97.94176, 30.304595], "Name": "Greater Austin Allergy, Asthma & Immunology- Galleria", "Address": "12801 Shops Pkwy Ste 400, Bee Cave, TX 78738", "Phone Number": "(512) 732-2774", "Website": "http://www.austinallergist.com/"},
+{"coordinates": [-97.753932, 30.420304], "Name": "Greater Austin Allergy, Asthma & Immunology-Jollyville", "Address": "11762 Jollyville Rd, Austin, TX 78759", "Phone Number": "(512) 732-2774", "Website": "http://www.austinallergist.com/"},
+{"coordinates": [-97.74333, 30.415357], "Name": "Allergy Partners of Austin", "Address": "11645 Angus Rd a1, Austin, TX 78759", "Phone Number": "(512) 345-7635", "Website": "https://www.allergypartners.com/centraltexas/"},
+{"coordinates": [-97.730529, 30.396737], "Name": "Austin Family Allergy & Asthma", "Address": "10801 N Mopac Expy bldg 2 ste 150, Austin, TX 78759", "Phone Number": "(512) 346-7936", "Website": "https://familyallergyatx.com/"},
+{"coordinates": [-97.823904, 30.509692], "Name": "Allergy & Asthma Clinic of Central Texas", "Address": "103 N Bell Blvd # A2, Cedar Park, TX 78613", "Phone Number": "(512) 357-3200", "Website": "https://www.allergycentex.com/?utm_source=gmb_auth"},
+{"coordinates": [-97.677545, 30.511948], "Name": "Allergy and Asthma Clinic of Central Texas", "Address": "171 Deep Wood Dr Ste 105, Round Rock, TX 78681", "Phone Number": "(512) 357-3666", "Website": "https://www.allergycentex.com/?utm_source=gmb_auth"},
+{"coordinates": [-97.677545, 30.511948], "Name": "Round Rock Allergy and Asthma Clinic", "Address": "15930 Great Oaks Dr, Round Rock, TX 78681", "Phone Number": "(512) 804-0999", "Website": "https://www.allallergies.com/"},
+{"coordinates": [-97.753668, 30.342392], "Name": "Aspire Allergy & Sinus", "Address": "5929 Balcones Dr Suite 200, Austin, TX 78731", "Phone Number": "(512) 233-6936", "Website": "https://www.aspireallergy.com/"},
+{"coordinates": [-97.729989, 30.398177], "Name": "Food Allergy Specialists", "Address": "10801-2 N Mopac Expy #150, Austin, TX 78759", "Phone Number": "(512) 346-7936", "Website": "http://familyallergyatx.com/"},
+{"coordinates": [-97.730529, 30.396737], "Name": "Allen K. Lieberman, M.D.", "Address": "10801 N Mopac Expy bldg 2 ste 150, Austin, TX 78759", "Phone Number": "(512) 346-7936", "Website": "https://familyallergyatx.com/"},
+{"coordinates": [-97.74246, 30.301835], "Name": "Allergy & Asthma Consultants", "Address": "720 W 34th St #200, Austin, TX 78705", "Phone Number": "(512) 454-5821", "Website": "http://www.austinallergy.com/"},
+{"coordinates": [-97.845678, 30.3925], "Name": "Greater Austin Allergy, Asthma & Immunology- Four Points", "Address": "6611 River Pl Blvd Ste 100, Austin, TX 78730", "Phone Number": "(512) 732-2774", "Website": "http://www.austinallergist.com/"},
+{"coordinates": [-97.75014, 30.352597], "Name": "Allergy Partners of Austin", "Address": "3410 Far W Blvd #146, Austin, TX 78731", "Phone Number": "(512) 349-0777", "Website": "https://www.allergypartners.com/austin"},
+{"coordinates": [-97.694332, 30.51674], "Name": "Allergy & Asthma Clinic: Navarro Maritza DO", "Address": "1201 Sam Bass Rd, Round Rock, TX 78681", "Phone Number": "(512) 388-1861", "Website": "https://www.allergycentex.com/"},
+{"coordinates": [-97.807932, 30.524005], "Name": "Aspire Allergy & Sinus", "Address": "1464 E Whitestone Blvd Suite 301, Cedar Park, TX 78613", "Phone Number": "(512) 233-6936", "Website": "https://www.aspireallergy.com/"},
+{"coordinates": [-97.691095, 30.484073], "Name": "AAHCHOO PLLC Allergist", "Address": "970 Hesters Crossing Rd #100, Round Rock, TX 78681", "Phone Number": "(512) 248-8864", "Website": "http://www.txallergycenter.com/"},
+{"coordinates": [-97.794398, 30.2309], "Name": "Austin Allergy and Asthma Clinic", "Address": "2312 Western Trails Blvd, Austin, TX 78745", "Phone Number": "(512) 804-0000", "Website": "https://www.allallergies.com/"},
+{"coordinates": [-97.75014, 30.352597], "Name": "Allergy Free Austin", "Address": "3410 Far W Blvd #146, Austin, TX 78731", "Phone Number": "(512) 349-0777", "Website": "https://www.allergypartners.com/centraltexas/"},
+{"coordinates": [-97.676326, 30.508945], "Name": "Greater Austin Allergy", "Address": "303 E Main St, Round Rock, TX 78664", "Phone Number": "(512) 732-2774", "Website": "https://austinallergist.com/"},
+{"coordinates": [-97.843664, 30.310115], "Name": "Allergy & Immunology Medical Center", "Address": "248 Addie Roy Rd Suite B201, Austin, TX 78746", "Phone Number": "(512) 329-5800", "Website": "http://www.aimedcenter.com/"},
+{"coordinates": [-97.694332, 30.51674], "Name": "Allergy & Asthma Clinic: Herrera Geralyn MD", "Address": "1201 Sam Bass Rd, Round Rock, TX 78681", "Phone Number": "(512) 388-1861", "Website": "https://www.allergycentex.com/"},
+{"coordinates": [-97.753932, 30.420304], "Name": "Sneeze Allergy & Cough Centers", "Address": "11762 Jollyville Rd, Austin, TX 78759", "Phone Number": "(512) 732-2774", "Website": "http://www.sneeze.com/"},
+{"coordinates": [-97.700555, 30.510883], "Name": "Allergy and Asthma Clinic of Central Texas", "Address": "170 Deep Wood Dr STE 105, Round Rock, TX 78681", "Phone Number": "(512) 388-1861", "Website": "http://www.allergycentex.com/"},
+{"coordinates": [-97.808645, 30.28029], "Name": "Victory Allergy Clinic", "Address": "3811 Bee Caves Rd, West Lake Hills, TX 78746", "Phone Number": "(512) 527-6157", "Website": "http://www.victorymed.com/?utm_source=gmb_auth"},
+{"coordinates": [-97.75014, 30.352597], "Name": "Allergy & Asthma Associates: Van Bavel Jay H MD", "Address": "3410 Far W Blvd #146, Austin, TX 78731", "Phone Number": "(512) 349-0777", "Website": "https://www.allergypartners.com/centraltexas/"},
+{"coordinates": [-97.834619, 30.518524], "Name": "Allergy & Asthma Associates", "Address": "500 W Whitestone Blvd #100, Cedar Park, TX 78613", "Phone Number": "(512) 349-0777", "Website": "None"},
+{"coordinates": [-97.791153, 30.232197], "Name": "Victory Allergy Clinic", "Address": "4303 Victory Dr, Austin, TX 78704", "Phone Number": "(512) 481-7161", "Website": "http://www.victorymed.com/?utm_source=gmb_auth"},
+{"coordinates": [-97.681382, 30.613883], "Name": "Allergy & Asthma Center of Georgetown", "Address": "3201 S Austin Ave Suite 140, Georgetown, TX 78626", "Phone Number": "(512) 868-6673", "Website": "http://www.georgetownallergy.com/"},
+{"coordinates": [-97.740456, 30.309805], "Name": "Allergy Partners of Central Texas", "Address": "4150 N Lamar Blvd, Austin, TX 78756", "Phone Number": "(512) 467-0978", "Website": "https://www.allergypartners.com/centraltexas/"},
+{"coordinates": [-97.812177, 30.532424], "Name": "Kelly H. Simpson, MD", "Address": "1401 Medical Parkway Bldg B, Suites 220 & 200, Cedar Park, TX 78613", "Phone Number": "(512) 260-1581", "Website": "https://www.austinregionalclinic.com/doctors/kelly-simpson"},
+{"coordinates": [-97.802289, 30.528332], "Name": "ENT & Allergy Center of Austin", "Address": "1730 E Whitestone Blvd, Cedar Park, TX 78613", "Phone Number": "(512) 328-7722", "Website": "https://www.austinentmd.com/"},
+{"coordinates": [-97.704797, 30.512529], "Name": "Aspire Allergy & Sinus", "Address": "1780 Round Rock Ave Suite 200, Round Rock, TX 78681", "Phone Number": "(512) 233-6936", "Website": "https://www.aspireallergy.com/"},
+{"coordinates": [-97.836849, 30.22278], "Name": "Allergy & Asthma Clinic of Central Texas", "Address": "6600 S MoPac Expy #2180, Austin, TX 78749", "Phone Number": "(512) 253-2676", "Website": "https://www.allergycentex.com/?utm_source=gmb_auth"},
+{"coordinates": [-97.824247, 30.295089], "Name": "Greater Austin Allergy, Asthma & Immunology-Westlake", "Address": "5656 Bee Caves Rd Suite G-201, Austin, TX 78746", "Phone Number": "(512) 732-2774", "Website": "http://www.austinallergist.com/"},
+{"coordinates": [-97.791153, 30.232197], "Name": "Austin Allergy Center", "Address": "4303 Victory Dr, Austin, TX 78704", "Phone Number": "(512) 633-2398", "Website": "http://www.austinallergyclinic.com/"},
+{"coordinates": [-97.684237, 30.622595], "Name": "Allergy & Asthma Clinic of Central Texas", "Address": "508 Leander Rd, Georgetown, TX 78628", "Phone Number": "(512) 357-3500", "Website": "https://www.allergycentex.com/?utm_source=gmb_auth"},
+{"coordinates": [-97.706511, 30.411588], "Name": "John Villacis, MD", "Address": "12221 N Mopac Expy 1st Floor, Austin, TX 78758", "Phone Number": "(512) 901-4002", "Website": "https://www.adclinic.com/?utm_campaign=corp_listings_mgmt&utm_source=google&utm_medium=business_listing"},
+{"coordinates": [-97.812382, 30.284343], "Name": "Hill Country Allergy & Asthma", "Address": "4201 Bee Caves Rd # B200, West Lake Hills, TX 78746", "Phone Number": "(512) 610-3110", "Website": "http://www.hillcountryallergy.com/"},
+{"coordinates": [-97.681382, 30.613883], "Name": "Allergy & Asthma Center of Georgetown", "Address": "3201 S Austin Ave #140, Georgetown, TX 78626", "Phone Number": "(512) 868-6673", "Website": "http://www.georgetownallergy.com/"},
+{"coordinates": [-97.706511, 30.411588], "Name": "Scott Oberhoff, MD", "Address": "12221 N Mopac Expy 1st Floor, Austin, TX 78758", "Phone Number": "(512) 901-4002", "Website": "https://www.adclinic.com/?utm_campaign=corp_listings_mgmt&utm_source=google&utm_medium=business_listing"},
+{"coordinates": [-97.75014, 30.352597], "Name": "Thomas Leath, M.D.", "Address": "3410 Far W Blvd #146, Austin, TX 78731", "Phone Number": "(512) 349-0777", "Website": "https://www.allergypartners.com/austin"},
+{"coordinates": [-97.824247, 30.295089], "Name": "Aspire Allergy & Sinus", "Address": "5656 Bee Caves Rd C-104, West Lake Hills, TX 78746", "Phone Number": "(512) 233-6936", "Website": "https://www.aspireallergy.com/"},
+{"coordinates": [-97.691095, 30.484073], "Name": "Dr. Veena Rajashekhar, MD", "Address": "970 Hesters Crossing Rd # 100, Round Rock, TX 78681", "Phone Number": "(512) 248-8864", "Website": "http://www.txallergycenter.com/"},
+{"coordinates": [-97.742264, 30.310297], "Name": "Allergy Elimination Clinic", "Address": "4105 Medical Pkwy #202, Austin, TX 78756", "Phone Number": "(512) 206-4158", "Website": "None"},
+{"coordinates": [-97.858607, 30.243382], "Name": "Greater Austin Allergy, Asthma & Immunology- SouthWest Medical Village", "Address": "5625 Eiger Rd Ste 160, Austin, TX 78735", "Phone Number": "(512) 732-2774", "Website": "http://www.austinallergist.com/"},
+{"coordinates": [-97.74246, 30.301835], "Name": "Paul G. Vigo, MD", "Address": "720 W 34th St #200, Austin, TX 78705", "Phone Number": "(512) 454-5821", "Website": "http://www.austinallergy.com/"},
+{"coordinates": [-97.812883, 30.206564], "Name": "Aspire Allergy & Sinus", "Address": "2500 W William Cannon Dr Suite 803, Austin, TX 78745", "Phone Number": "(512) 233-6936", "Website": "https://www.aspireallergy.com/"},
+{"coordinates": [-97.681382, 30.613883], "Name": "Allergy & Asthma Center of Georgetown", "Address": "3201 S Austin Ave #140, Georgetown, TX 78626", "Phone Number": "(512) 868-6673", "Website": "http://georgetownallergy.com/"},
+{"coordinates": [-97.74246, 30.301835], "Name": "Peters Edward J MD", "Address": "720 W 34th St #200, Austin, TX 78705", "Phone Number": "(512) 454-5821", "Website": "http://www.austinallergy.com/"},
+{"coordinates": [-97.824247, 30.295089], "Name": "Sneeze Allergy & Cough Centers", "Address": "5656 Bee Caves Rd G-201, Austin, TX 78746", "Phone Number": "(512) 732-2774", "Website": "http://www.sneeze.com/"},
+{"coordinates": [-97.750423, 30.350713], "Name": "William R. Otto MD", "Address": "6811 Austin Center Blvd #300, Austin, TX 78731", "Phone Number": "(512) 346-8888", "Website": "http://www.austinregionalclinic.com/doctors/william-otto"},
+{"coordinates": [-97.787907, 30.270967], "Name": "ENT & Allergy Center of Austin", "Address": "2765 Bee Caves Rd #205, Austin, TX 78746", "Phone Number": "(512) 328-7722", "Website": "https://www.austinentmd.com/"},
+{"coordinates": [-97.854148, 30.552087], "Name": "Hill Country Allergy & Asthma", "Address": "800 Crystal Falls Pkwy BLDG 3, Leander, TX 78641", "Phone Number": "(512) 610-3110", "Website": "http://www.hillcountryallergy.com/"},
+{"coordinates": [-97.971947, 30.363537], "Name": "Aspire Allergy & Sinus", "Address": "1310 Ranch Rd 620 S B-9, Lakeway, TX 78734", "Phone Number": "(512) 726-2116", "Website": "https://www.aspireallergy.com/"},
+{"coordinates": [-97.700555, 30.510883], "Name": "Anthony R. Henry, MD", "Address": "170 Deep Wood Dr STE 105, Round Rock, TX 78681", "Phone Number": "(512) 357-3666", "Website": "https://www.allergycentex.com/?utm_source=gmb_auth"},
+{"coordinates": [-97.74246, 30.301835], "Name": "Alexander Alvarez, MD", "Address": "720 W 34th St #200, Austin, TX 78705", "Phone Number": "(512) 454-5821", "Website": "http://www.austinallergy.com/"},
+{"coordinates": [-97.836521, 30.222346], "Name": "Hetu Parekh, MD", "Address": "1401 Medical Pkwy Building B, Suite 200, Austin, TX 78613", "Phone Number": "(512) 260-1581", "Website": "https://www.austinregionalclinic.com/"},
+{"coordinates": [-97.711695, 30.513105], "Name": "Tamesis Grace MD PA", "Address": "16010 Park Valley Dr #300, Round Rock, TX 78681", "Phone Number": "(737) 203-9645", "Website": "https://www.patientfusion.com/doctor/grace-tamesis-md-mph-68877"},
+{"coordinates": [-97.769209, 30.227858], "Name": "Juan L. Rodriguez Ramos, MD", "Address": "3816 S 1st St, Austin, TX 78704", "Phone Number": "(512) 443-1311", "Website": "https://www.austinregionalclinic.com/doctors/juan-rodriguez-ramos?utm_source=online-directory&utm_campaign=GMB&utm_content=juan-rodriguez-ramos"},
+{"coordinates": [-97.753668, 30.342392], "Name": "texan allergy", "Address": "5929 Balcones Dr, Austin, TX 78731", "Phone Number": "(512) 726-2116", "Website": "None"},
+{"coordinates": [-97.700555, 30.510883], "Name": "Dr. Brian Miller", "Address": "170 Deep Wood Dr STE 105, Round Rock, TX 78681", "Phone Number": "(512) 388-1861", "Website": "https://www.allergycentex.com/provider/brian-terry-miller-do"},
+{"coordinates": [-97.700555, 30.510883], "Name": "Dr. Anthony Henry", "Address": "170 Deep Wood Dr STE 105, Round Rock, TX 78681", "Phone Number": "(512) 388-1861", "Website": "None"},
+{"coordinates": [-97.971947, 30.363537], "Name": "Aspire Allergy & Sinus", "Address": "1310 Ranch Rd 620 S Suite B-9, Lakeway, TX 78734", "Phone Number": "(512) 233-6936", "Website": "https://www.aspireallergy.com/"},
+{"coordinates": [-97.707278, 30.305582], "Name": "Pooja Varshney, MD", "Address": "1301 Barbara Jordan Blvd #200, Austin, TX 78723", "Phone Number": "(512) 628-1870", "Website": "https://healthcare.ascension.org/doctors/1255507943/pooja-varshney-austin-tx?utm_campaign=gmb-website&utm_medium=organic&utm_source=google"},
+{"coordinates": [-97.680872, 30.558902], "Name": "Karim Zul Dhanani, MD", "Address": "425 University Blvd, Round Rock, TX 78665", "Phone Number": "(512) 509-0200", "Website": "https://www.bswhealth.com/physician/karim-dhanani?utm_source=google-mybusiness&utm_medium=organic&utm_campaign=1912106154-9689"},
+{"coordinates": [-97.698088, 30.415429], "Name": "Allergy Asthma Care of Austin", "Address": "12414 Alderbrook Dr, Austin, TX 78758", "Phone Number": "(512) 873-7468", "Website": "None"},
+{"coordinates": [-97.698088, 30.415429], "Name": "Navarro Maritza MD", "Address": "12414 Alderbrook Dr, Austin, TX 78758", "Phone Number": "(512) 873-7468", "Website": "None"},
+{"coordinates": [-97.754046, 30.420637], "Name": "Dr. Paul Scibielski", "Address": "11770 Jollyville Rd, Austin, TX 78759", "Phone Number": "(512) 732-2774", "Website": "None"},
+{"coordinates": [-97.75014, 30.352597], "Name": "Douglas Barstow, M.D.", "Address": "3410 Far W Blvd #146, Austin, TX 78731", "Phone Number": "(512) 349-0777", "Website": "https://www.allergypartners.com/austin"},
+{"coordinates": [-97.703369, 30.408804], "Name": "Us Allergy Labs LLC", "Address": "2200 Park Bend Dr, Austin, TX 78758", "Phone Number": "(512) 821-1996", "Website": "None"},
+{"coordinates": [-97.781984, 30.264496], "Name": "Allergy Energy", "Address": "901 S MoPac Expy, Austin, TX 78746", "Phone Number": "(512) 284-8584", "Website": "None"},
+{"coordinates": [-97.744155, 30.305239], "Name": "Texas Allergy Solution - Austin", "Address": "3705 Medical Pkwy #440, Austin, TX 78705", "Phone Number": "(512) 215-8985", "Website": "None"},
+{"coordinates": [-97.60103, 30.498468], "Name": "ENT & Allergy Center of Austin", "Address": "4112 Links Ln #204, Round Rock, TX 78664", "Phone Number": "(512) 328-7722", "Website": "https://www.austinentmd.com/"},
+{"coordinates": [-98.262713, 30.584532], "Name": "Victory Allergy Clinic", "Address": "503 Ranch Rd 1431, Marble Falls, TX 78654", "Phone Number": "(830) 693-9127", "Website": "https://victorymed.com/lang/en-us/services/allergy-center"},
+{"coordinates": [-97.794398, 30.2309], "Name": "Gaglani Binaca MD", "Address": "2312 Western Trails Blvd, Austin, TX 78745", "Phone Number": "(512) 804-0000", "Website": "http://www.allallergies.com/"},
+{"coordinates": [-98.262713, 30.584532], "Name": "Victory Allergy Clinic", "Address": "503 Ranch Rd 1431 Suite # 101, Marble Falls, TX 78654", "Phone Number": "(512) 535-1023", "Website": "http://www.victorymed.com/?utm_source=gmb_auth"},
+{"coordinates": [-97.7739, 30.224834], "Name": "My Austin Allergist", "Address": "4207 James Casey St STE 306, Austin, TX 78745", "Phone Number": "(512) 338-1366", "Website": "None"},
+{"coordinates": [-97.860944, 30.000237], "Name": "Aspire Allergy & Sinus", "Address": "147 Elmhurst Dr Suite 200, Kyle, TX 78640", "Phone Number": "(512) 233-6936", "Website": "https://www.aspireallergy.com/"},
+{"coordinates": [-97.844073, 30.393103], "Name": "Grater Austin Allergy And Immngy", "Address": "10601 Ranch Rd 2222, Austin, TX 78730", "Phone Number": "(512) 732-2774", "Website": "None"},
+{"coordinates": [-97.312891, 30.117217], "Name": "Brazos Valley Allergy & Asthma Clinics", "Address": "815 State Hwy 71 w suite, Bastrop, TX 78602", "Phone Number": "(979) 836-5582", "Website": "http://www.bvallergy.com/"},
+{"coordinates": [-97.710864, 30.513419], "Name": "Dr. Jeffrey Hallett, MD", "Address": "16000 Park Valley Dr #130, Round Rock, TX 78681", "Phone Number": "(210) 614-3923", "Website": "http://www.drhallett.com/"},
+{"coordinates": [-97.962592, 30.346703], "Name": "Amin Mery MD", "Address": "4 Lakeway Centre Ct, Austin, TX 78734", "Phone Number": "(512) 610-3110", "Website": "http://www.hillcountryallergy.com/"},
+{"coordinates": [-97.740456, 30.309805], "Name": "Robert Cook, M.D.", "Address": "4150 N Lamar Blvd, Austin, TX 78756", "Phone Number": "(512) 467-0978", "Website": "https://www.allergypartners.com/centraltexas/"},
+{"coordinates": [-97.843664, 30.310115], "Name": "Patel Ojas P MD", "Address": "248 Addie Roy Rd b201, Austin, TX 78746", "Phone Number": "(512) 329-5800", "Website": "http://www.aimedcenter.com/"},
+{"coordinates": [-98.099406, 30.193335], "Name": "Hill Country Allergy & Asthma", "Address": "800 US-290 #200, Dripping Springs, TX 78620", "Phone Number": "(512) 610-3110", "Website": "http://www.hillcountryallergy.com/"},
+{"coordinates": [-97.689401, 30.484899], "Name": "Colleen S. Adkins, MD", "Address": "940 Hesters Crossing Rd, Round Rock, TX 78681", "Phone Number": "(737) 247-7200", "Website": "https://www.austinregionalclinic.com/doctors/colleen-adkins?utm_source=online-directory&utm_campaign=yext&utm_content=colleen-adkins"},
+{"coordinates": [-97.756517, 30.33493], "Name": "Dr. Thurman R. Vaughan, MD", "Address": "3303 Northland Dr # 301, Austin, TX 78731", "Phone Number": "(512) 458-9191", "Website": "None"},
+{"coordinates": [-97.787907, 30.270967], "Name": "ENT & Allergy Center of Austin: Dr. Karen Stierman & Dr. Russell Briggs", "Address": "2765 Bee Caves Rd #205, Austin, TX 78746", "Phone Number": "(512) 328-7722", "Website": "https://www.austinentmd.com/"},
+{"coordinates": [-98.270457, 30.595818], "Name": "Hill Country Allergy and Asthma", "Address": "2503 US-281, Marble Falls, TX 78654", "Phone Number": "(512) 610-3110", "Website": "http://www.hillcountryallergy.com/"},
+{"coordinates": [-97.824247, 30.295089], "Name": "Dr. Thomas F. Smith", "Address": "5656 Bee Caves Rd, Austin, TX 78746", "Phone Number": "(512) 732-2774", "Website": "http://www.austinallergist.com/"},
+{"coordinates": [-97.707278, 30.305582], "Name": "Jackee D. Kayser, MD", "Address": "1301 Barbara Jordan Blvd #200, Austin, TX 78723", "Phone Number": "(512) 628-1870", "Website": "https://healthcare.ascension.org/doctors/1285686683/jackee-dawn-thornton-kayser-austin-tx?utm_campaign=gmb-website&utm_medium=organic&utm_source=google"},
+{"coordinates": [-97.812177, 30.532424], "Name": "Cedar Park Regional Med Center: Hetherington Kelly A MD", "Address": "1401 Medical Pkwy, Cedar Park, TX 78613", "Phone Number": "(512) 528-7000", "Website": "http://www.cedarparkregional.com/"},
+{"coordinates": [-97.845678, 30.3925], "Name": "Dr. Eric Schultz", "Address": "6611 River Pl Blvd Ste 100, Austin, TX 78730", "Phone Number": "(512) 732-2774", "Website": "https://www.austinallergist.com/providers/eric-d-schultz-do-mph/"},
+{"coordinates": [-97.74246, 30.301835], "Name": "Dr. Maria G. Gutierrez, MD", "Address": "720 W 34th St, Austin, TX 78705", "Phone Number": "(512) 454-5821", "Website": "http://www.austinallergy.com/"},
+{"coordinates": [-97.858607, 30.243382], "Name": "Dr. Seth M Hollander, MD", "Address": "5625 Eiger Rd #200, Austin, TX 78735", "Phone Number": "(737) 802-3084", "Website": "https://www.austinallergist.com/"},
+{"coordinates": [-97.82969, 30.509618], "Name": "Brian Terry Miller, DO", "Address": "103 A, 103 N Bell Blvd A2, Cedar Park, TX 78613", "Phone Number": "(512) 357-3200", "Website": "https://www.allergycentex.com/?utm_source=gmb_auth"},
+{"coordinates": [-97.793627, 30.271492], "Name": "Texas Integrative Ent & Allergy", "Address": "3006 Bee Caves Rd A-300, Austin, TX 78746", "Phone Number": "(512) 800-5309", "Website": "http://www.texasintegrative.com/"},
+{"coordinates": [-97.312891, 30.117217], "Name": "Greater Austin Allergy, Asthma & Immunology - Bastrop", "Address": "3101 Highway 71 East, Suite 210, Bastrop, TX 78602", "Phone Number": "None", "Website": "http://www.austinallergist.com/"},
+{"coordinates": [-97.750423, 30.350713], "Name": "Elisabeth A. Clayton, MD", "Address": "6811 Austin Center Blvd Suite 300, Austin, TX 78731", "Phone Number": "(512) 676-2500", "Website": "https://www.austinregionalclinic.com/doctors/elisabeth-clayton?utm_source=online-directory&utm_campaign=yext&utm_content=elisabeth-clayton"},
+{"coordinates": [-97.740456, 30.309805], "Name": "Thomas Leath", "Address": "4150 N Lamar Blvd, Austin, TX 78756", "Phone Number": "(512) 467-0978", "Website": "https://www.allergypartners.com/centraltexas/providers/thomas-leath-md/"},
+{"coordinates": [-97.791153, 30.232197], "Name": "Gary Albertson, DO", "Address": "4303 Victory Dr, Austin, TX 78704", "Phone Number": "(512) 462-3627", "Website": "https://www.victorymed.com/"},
+{"coordinates": [-97.703651, 30.411471], "Name": "Sinus & Snoring Specialists", "Address": "12221 Renfert Way Suite 110, Austin, TX 78758", "Phone Number": "(512) 601-0303", "Website": "https://www.sinussnoringent.com/"},
+{"coordinates": [-98.094374, 29.989426], "Name": "Mercado Ent & Allergy Clinic", "Address": "15520 Ranch Rd 12, Wimberley, TX 78676", "Phone Number": "(512) 842-3018", "Website": "None"},
+{"coordinates": [-97.754046, 30.420637], "Name": "Dr. Eric D. Schultz, DO", "Address": "11770 Jollyville Rd, Austin, TX 78759", "Phone Number": "(512) 331-5118", "Website": "None"},
+{"coordinates": [-97.860466, 29.998896], "Name": "Texan ENT Specialists (Ear, Nose & Throat Doctor)", "Address": "211 Elmhurst Dr Suite D/E, Kyle, TX 78640", "Phone Number": "(512) 550-0321", "Website": "https://texanent.com/"},
+{"coordinates": [-97.68991, 30.390134], "Name": "Gluten and Food Allergy Specialist", "Address": "11803 Knollpark Dr, Austin, TX 78758", "Phone Number": "(512) 709-1868", "Website": "https://conniecurtis.leadpages.net/launchpage/"},
+{"coordinates": [-97.74246, 30.301835], "Name": "Eben O. Soliz, PA", "Address": "720 W 34th St #200, Austin, TX 78705", "Phone Number": "(512) 454-5821", "Website": "http://www.austinallergy.com/"},
+{"coordinates": [-97.849115, 30.41787], "Name": "Austin Regional Clinic: ARC Wilson Parke", "Address": "11714 Wilson Parke Ave Suite 150, Austin, TX 78726", "Phone Number": "(737) 247-7200", "Website": "https://www.austinregionalclinic.com/clinics/arc-wilson-parke?utm_source=online-directory&utm_campaign=yext&utm_content=location-wp"},
+{"coordinates": [-97.743892, 30.414227], "Name": "Punjabi Medical Clinic: Narendra Punjabi, MD, PA", "Address": "11615 Angus Rd #106, Austin, TX 78759", "Phone Number": "(512) 346-8652", "Website": "http://www.pmcaustin.com/"},
+{"coordinates": [-97.771338, 30.277176], "Name": "Animal Dermatology Clinic - Austin", "Address": "2207 Lake Austin Blvd, Austin, TX 78703", "Phone Number": "(512) 477-4824", "Website": "https://www.animaldermatology.com/locations/austin"},
+{"coordinates": [-97.820132, 30.49873], "Name": "Victory Medical", "Address": "351 Cypress Creek Road #100, Cedar Park, TX 78613", "Phone Number": "(512) 489-7768", "Website": "http://www.victorymed.com/?utm_source=gmb_auth"},
+{"coordinates": [-97.741452, 30.401629], "Name": "Jeffrey B. Kahn, M.D.", "Address": "4515 Seton Center Pkwy #100, Austin, TX 78759", "Phone Number": "(512) 346-5562", "Website": "http://www.austinent.com/"},
+{"coordinates": [-97.680872, 30.558902], "Name": "Baylor Scott & White Clinic - Round Rock 425 University", "Address": "425 University Blvd, Round Rock, TX 78665", "Phone Number": "(512) 509-0200", "Website": "https://www.bswhealth.com/locations/round-rock-425-university-clinic?utm_source=google-mybusiness&utm_medium=organic&utm_campaign=9689&y_source=1_MTM0MTE2MzgtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D"},
+{"coordinates": [-97.744397, 30.40544], "Name": "June-Ku B. Kang, MD", "Address": "11111 Research Blvd #300, Austin, TX 78759", "Phone Number": "(512) 380-9200", "Website": "https://healthcare.ascension.org/doctors/1235285909/june-ku-brian-kang-austin-tx?utm_campaign=gmb-website&utm_medium=organic&utm_source=google"},
+{"coordinates": [-97.868695, 30.200386], "Name": "Austin Diagnostic Clinic - Circle C", "Address": "5701 W Slaughter Ln Building C, Austin, TX 78749", "Phone Number": "(512) 334-2500", "Website": "https://adclinic.com/locations/circle-c/?utm_campaign=corp_listings_mgmt&utm_source=google&utm_medium=business_listing"},
+{"coordinates": [-97.727925, 30.290727], "Name": "Dr. Laurence Chu MD, FACS", "Address": "3100 Red River St, Austin, TX 78705", "Phone Number": "(512) 320-9915", "Website": "http://www.drchu-austin.com/"},
+{"coordinates": [-97.883849, 30.389159], "Name": "Dr. Theresa Willis, MD", "Address": "5145 Ranch Rd 620, Austin, TX 78732", "Phone Number": "(512) 681-5902", "Website": "http://www.adclinic.com/"},
+{"coordinates": [-97.741452, 30.401629], "Name": "Austin Regional Clinic: ARC Quarry Lake", "Address": "4515 Seton Center Pkwy Suite 220, Austin, TX 78759", "Phone Number": "(512) 338-8388", "Website": "https://www.austinregionalclinic.com/clinics/arc-quarry-lake?utm_source=online-directory&utm_campaign=yext&utm_content=location-ql"},
+{"coordinates": [-97.706511, 30.411588], "Name": "Austin Diagnostic Clinic - North Clinic", "Address": "12221 N Mopac Expy, Austin, TX 78758", "Phone Number": "(512) 901-1111", "Website": "https://www.adclinic.com/?utm_campaign=corp_listings_mgmt&utm_source=google&utm_medium=business_listing"},
+{"coordinates": [-97.701929, 30.322941], "Name": "Austin Regional Clinic", "Address": "6210 US-290, Austin, TX 78723", "Phone Number": "(512) 272-4636", "Website": "https://www.austinregionalclinic.com/"},
+{"coordinates": [-97.826327, 30.287695], "Name": "Clarity Wellness Center", "Address": "925 S Capital of Texas Hwy, Austin, TX 78746", "Phone Number": "(707) 529-1377", "Website": "None"},
+{"coordinates": [-97.748781, 30.308168], "Name": "Pediatric Associates of Austin PA", "Address": "1500 W 38th St Suite 20, Austin, TX 78731", "Phone Number": "(512) 458-5323", "Website": "http://www.pediatricassociates.net/?utm_source=gmb_auth"},
+{"coordinates": [-97.744397, 30.40544], "Name": "Bennie C. McWilliams Jr, MD", "Address": "Dell Children's Medical Group Seton Northwest Medical Plaza, 11111 Research Blvd Suite 300, Austin, TX 78759", "Phone Number": "(512) 380-9200", "Website": "None"},
+{"coordinates": [-97.709981, 30.424305], "Name": "Dr. Shenil S. Shah, MD", "Address": "3600 W Parmer Ln #106, Austin, TX 78727", "Phone Number": "(512) 977-0123", "Website": "http://www.austinpulmonaryconsultants.com/"},
+{"coordinates": [-97.805618, 30.446504], "Name": "Austin Regional Clinic: ARC Anderson Mill", "Address": "10401 Anderson Mill Rd Suite 110B, Austin, TX 78750", "Phone Number": "(512) 250-5571", "Website": "https://www.austinregionalclinic.com/clinics/arc-anderson-mill?utm_source=online-directory&utm_campaign=yext&utm_content=location-am"},
+{"coordinates": [-97.681382, 30.613883], "Name": "Sleep Center at Georgetown ENT", "Address": "3201 S Austin Ave #370, Georgetown, TX 78626", "Phone Number": "(512) 869-0604", "Website": "https://www.sleepatgeorgetownent.com/"},
+{"coordinates": [-97.774476, 30.223646], "Name": "Robert E. Butler, M.D., FACS, FAAOA", "Address": "4315 James Casey St #300, Austin, TX 78745", "Phone Number": "(512) 444-7944", "Website": "http://www.austinent.com/"},
+{"coordinates": [-97.805618, 30.446504], "Name": "Albert J. Wong, MD", "Address": "10401 Anderson Mill Rd Suite 110B, Austin, TX 78750", "Phone Number": "(512) 250-5571", "Website": "https://www.austinregionalclinic.com/doctors/albert-wong"},
+{"coordinates": [-97.739741, 30.373458], "Name": "Texas Children's Specialty Care Austin", "Address": "8611 N Mopac Expy Suite 300, Austin, TX 78759", "Phone Number": "(737) 220-8200", "Website": "https://www.texaschildrensspecialtycareaustin.org/"},
+{"coordinates": [-97.689401, 30.484899], "Name": "Austin Regional Clinic: ARC Round Rock", "Address": "940 Hesters Crossing Rd, Round Rock, TX 78681", "Phone Number": "(512) 244-9024", "Website": "https://www.austinregionalclinic.com/clinics/arc-round-rock?utm_source=online-directory&utm_campaign=yext&utm_content=location-rr"},
+{"coordinates": [-97.805618, 30.446504], "Name": "Urmila Parthasarathy, DO", "Address": "10401 Anderson Mill Rd Suite 110B, Austin, TX 78750", "Phone Number": "(512) 250-5571", "Website": "https://www.austinregionalclinic.com/doctors/urmila-parthasarathy?featuretab=booknow&utm_source=online-directory&utm_campaign=yext&utm_content=urmila-parthasarathy-book-appt"},
+{"coordinates": [-97.794379, 30.459063], "Name": "Dr Bary Chiropractic and Acupuncture", "Address": "13740 N Hwy 183 STE K4, Austin, TX 78750", "Phone Number": "(512) 343-2279", "Website": "http://www.drbary.com/"},
+{"coordinates": [-97.805618, 30.446504], "Name": "Madhu Hooda, MD", "Address": "10401 Anderson Mill Rd Suite 110B, Austin, TX 78750", "Phone Number": "(512) 250-5571", "Website": "https://www.austinregionalclinic.com/doctors/madhu-hooda?featuretab=booknow&utm_source=online-directory&utm_campaign=yext&utm_content=madhu-hooda-book-appt"},
+{"coordinates": [-97.744397, 30.40544], "Name": "Austin Regional Clinic: ARC Seton Northwest", "Address": "11111 Research Blvd Suite 475, Austin, TX 78759", "Phone Number": "(512) 338-8181", "Website": "https://www.austinregionalclinic.com/clinics/arc-seton-northwest?utm_source=online-directory&utm_campaign=yext&utm_content=location-snw"},
+{"coordinates": [-97.805618, 30.446504], "Name": "Ky Q. Nguyen, MD", "Address": "10401 Anderson Mill Rd Suite 110B, Austin, TX 78750", "Phone Number": "(512) 250-5571", "Website": "https://www.austinregionalclinic.com/doctors/ky-nguyen?utm_source=online-directory&utm_campaign=yext&utm_content=ky-nguyen"},
+{"coordinates": [-97.749923, 30.41796], "Name": "Acupuncture Healing Arts Center", "Address": "11651 Jollyville Rd, Austin, TX 78759", "Phone Number": "(512) 331-3866", "Website": "http://drwuacupuncture.com/"},
+{"coordinates": [-97.688981, 30.527988], "Name": "Austin Veterinary Dermatology", "Address": "2000 N Mays St STE 112, Round Rock, TX 78664", "Phone Number": "(512) 716-1326", "Website": "None"},
+{"coordinates": [-97.7265, 30.497283], "Name": "Pediatric Center of Round Rock", "Address": "7700 Cat Hollow Dr, Round Rock, TX 78681", "Phone Number": "(512) 733-5437", "Website": "https://www.nurturekidspediatrics.com/"}]
+    
+    const clinics2 = [];
+
+
+    for (var i = 0; i < clinics.length; i++) {
+      var dict = {};
+      lon1 = myLong * Math.PI / 180;
+      lon2 = clinics[i]["coordinates"][0] * Math.PI / 180;
+      lat1 = myLat * Math.PI / 180;
+      lat2 = clinics[i]["coordinates"][1] * Math.PI / 180;
+   
+        // Haversine formula
+      let dlon = lon2 - lon1;
+      let dlat = lat2 - lat1;
+      let a = Math.pow(Math.sin(dlat / 2), 2)
+                 + Math.cos(lat1) * Math.cos(lat2)
+                 * Math.pow(Math.sin(dlon / 2),2);
+               
+      let c = 2 * Math.asin(Math.sqrt(a));
+   
+        // Radius of earth in kilometers. Use 3956
+        // for miles
+      let r = 6371;
+
+      
+   
+        // calculate the result
+      var namee = clinics[i]["Name"];
+      dict["Name"] = namee
+      dict["Distance"] = c*r;
+      dict["Address"] = clinics[i]["Address"];
+      dict["Phone"] = clinics[i]["Phone Number"];
+      dict["Website"] = clinics[i]["Website"]
+      clinics2.push(dict);
     }
-    function failure() {
-      alert("We can't access your location!")
+
+    clinics2.sort(function (a, b) {
+      return a.Distance - b.Distance;
+    });
+
+    var output = "";
+
+    for (var i = 0; i < 5; i++) {
+      output += String(clinics2[i]["Name"]);
+      output += "\n";
+      output += String(clinics2[i]["Address"]);
+      output += "\n"
+      output += String(clinics2[i]["Phone"]);
+      output += "\n"
+      output += "\n"
+      output += "\n"
     }
+
+    document.getElementById("ehaeader").innerText = output;
+
+  }
+  function failure() {
+    alert("We can't access your location!")
+  }
+    
+    
   </script>
 </head>
 
@@ -90,12 +287,13 @@ css/font-awesome.min.css">
       <div class="nav-links" id="navLinks">
         <i class="fa fa-times" onclick="hideMenu()"></i>
         <ul>
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="aboutus.html">ABOUT US</a></li>
-          <li><a href="allergeninformation.html">ALLERGEN INFORMATION</a></li>
-          <li><a href="contact.html">CONTACT</a></li>
-          <li><a href="locations.html">LOCATIONS</a></li>
-          <li><a href="test.html">WEB TEST</a></li>
+          <li><a href = "index.html">HOME</a></li>
+          <li><a href = "info.html">OUR GOAL</a></li>
+          <li><a href = "allergeninformation.html">ALLERGEN INFORMATION</a></li>
+          <li><a href = "locations.html">FIND A CLINIC</a></li>
+          <li><a href = "test.html">SIGN UP</a></li>
+          <li><a href = "track.html">TRACK</a></li>
+          <li><a href = "contact.html">CONTACT</a></li>
         </ul>
         <hr>
       </div>
@@ -103,10 +301,16 @@ css/font-awesome.min.css">
     </nav>
   </section>
   <section class="main">
-    <div class="text-box" style="margin-top: 100">
+    <div class="text-box10">
       <h1>Find a Clinic Near You</h1>
+      <br>
       <div id="map"></div>
+    </section>
+    <div class="text-box10">
+      <h2 id="ehaeade">Clinics Near You</h2>
+      <h6 id="ehaeader">Loading...</h6>
     </div>
+  </div>
   </section>
   <script src="main.js"></script>
   <script async

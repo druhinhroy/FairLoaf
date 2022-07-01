@@ -1798,22 +1798,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -97.704892,
-                    30.415249
-                ]
-            },
-            "properties": {
-                "Name": "Capital ENT & Sinus Center\n",
-                "Address": "12309 N Mopac Expy STE 100, Austin, TX 78758\n",
-                "Website": "(512) 339-4040\n",
-                "Phone Number": "https://www.capitalent.com/\n"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     -97.741452,
                     30.401629
                 ]
