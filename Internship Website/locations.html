@@ -66,10 +66,10 @@ css/font-awesome.min.css">
         num = event.feature.getProperty('Website');
         web = event.feature.getProperty('Phone Number');
         if (web.includes(".com")) {
-          infowindow.setContent("<h1 style='font-size: 15px; color: #000000'>" + name + "</h1>" + "<a style='color: #000000'>" + addy + "<br></a>" + "<a style='color: #000000'>" + num + "<br></a>" + "<a href = 'web'>" + web + "<br></a>");
+          infowindow.setContent("<a style='font-size: 15px; color: #000000'; font-weight: bold>" + name + "<br></a>" + "<a style='color: #000000'>" + addy + "<br></a>" + "<a style='color: #000000'>" + num + "<br></a>" + "<a href = " + web + "web'> Website <br></a>");
         }
         else {
-          infowindow.setContent("<h1 style='font-size: 15px; color: #000000'>" + name + "</h1>" + "<a style='color: #000000'>" + addy + "<br></a>" + "<a style='color: #000000'>" + num + "<br></a>");
+          infowindow.setContent("<a style='font-size: 15px; color: #000000'; font-weight: bold>" + name + "<br></a>" + "<a style='color: #000000'>" + addy + "<br></a>" + "<a style='color: #000000'>" + num + "<br></a>");
         }
         infowindow.setPosition(event.feature.getGeometry().get());
         infowindow.setOptions({ pixelOffset: new google.maps.Size(0, -30) });
@@ -302,7 +302,7 @@ css/font-awesome.min.css">
   </section>
   <section class="main">
     <div class="text-box10">
-      <h1>Find a Clinic Near You</h1>
+      <h1>Find an Allergy Clinic Near You</h1>
       <br>
       <div id="map"></div>
     <div class="text-box10">
