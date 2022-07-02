@@ -144,18 +144,20 @@ text-box10
 .text-box10 h2 {
   color: #fff;
   position: relative;
-  margin-left: 1000px;
-  margin-right: 400px;
+  margin-left: 900px;
+  margin-right: 500px;
   margin-top: -626px;
+  width: 100%;
   font-size: 40px;
 }
 
 .text-box10 h6 {
   color: #fff;
   text-align: center;
+  width: 40%;
   position: relative;
-  margin-left: 800px;
-  margin-right: 400px;
+  margin-left: 769px;
+  margin-right: 431px;
   margin-top: 40px;
   font-size: 20px;
 }
