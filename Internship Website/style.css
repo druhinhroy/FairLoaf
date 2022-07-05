@@ -126,6 +126,27 @@ nav img
   text-align: center;
 }
 
+text-box12
+{
+  width: 90%;
+  color: #fff;
+  text-align: justify;
+}
+
+.text-box12 h1 {
+  color: #fff;
+  position: relative;
+  text-align: center;
+  font-size: 52px;
+}
+
+.text-box12 p {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 100;
+  margin-right: 10%;
+}
+
 text-box10
 {
   width: 90%;
@@ -146,7 +167,7 @@ text-box10
   position: relative;
   margin-left: 900px;
   margin-right: 500px;
-  margin-top: -626px;
+  margin-top: 30px;
   width: 100%;
   font-size: 40px;
 }
@@ -215,8 +236,8 @@ nav .fa
 .image
 {
   position: relative;
-  width: 400px;
-  margin-left: 40px;
+  width: 350px;
+  margin-left: 30px;
   margin-top: 60px;;
 }
 
@@ -224,7 +245,6 @@ nav .fa
 {
   display: block;
   width: 100%;
-  
 }
 
 .image__ov
@@ -361,7 +381,8 @@ nav .fa
   margin: auto;
   display: flex;
   flex-wrap: wrap;
-  padding: 20px;
+  padding: 0px;
+  padding-left: 0px;
 }
 
 .allergens-col
@@ -406,6 +427,7 @@ nav .fa
   height: 80vh;
   width: 80vh;
   margin: 40px;
+  float: left;
 }
 
 html, body
