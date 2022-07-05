@@ -141,25 +141,13 @@ text-box10
   font-size: 62px;
 }
 
-.text-box10 h2 {
+.text-box11{
   color: #fff;
   position: relative;
-  margin-left: 900px;
-  margin-right: 500px;
-  margin-top: -626px;
-  width: 100%;
-  font-size: 40px;
-}
-
-.text-box10 h6 {
-  color: #fff;
   text-align: center;
   width: 40%;
-  position: relative;
-  margin-left: 769px;
-  margin-right: 431px;
-  margin-top: 40px;
-  font-size: 20px;
+  font-size: 30px;
+  float: left;
 }
 
 .text-box h1
@@ -406,6 +394,7 @@ nav .fa
   height: 80vh;
   width: 80vh;
   margin: 40px;
+  float: left;
 }
 
 html, body
