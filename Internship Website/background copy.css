@@ -1,9 +1,0 @@
-body{
-  height: auto;
-  width: 100%;
-  background-image: linear-gradient(to bottom, rgba(4, 9, 30, 0.7),
-  rgba(4, 9, 30, 0.7)), url(images/background3.jpg);
-  background-position: center;
-  background-size: cover;
-  position: relative;
-}
