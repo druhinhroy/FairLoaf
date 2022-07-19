@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="background.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+rel="stylesheet">
+<link rel="stylesheet" href = "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/
+css/font-awesome.min.css">
+</head>
+<body>
+  <section class = "header">
+    <nav>
+      <a href="index.html"><img src="images/logo.jpg" width = "50" height = "50"></a>
+      <div class = "nav-links" id = "navLinks">
+        <i class="fa fa-times" onclick = "hideMenu()"></i>
+        <ul>
+          <li><a href = "index.html">HOME</a></li>
+          <li><a href = "info.html">OUR GOAL</a></li>
+          <li><a href = "allergeninformation.html">ALLERGEN INFORMATION</a></li>
+          <li><a href = "locations.html">FIND A CLINIC</a></li>
+          <li><a href = "home-remedies.html">HOME REMEDIES</a></li>
+          <li><a href = "signup.html">SIGN UP</a></li>
+          <li><a href = "track.html">TRACK</a></li>
+          <li><a href = "contact.html">CONTACT</a></li>
+        </ul>
+        <hr>
+      </div>
+      <i class="fa fa-bars" onclick = "showMenu()"></i>
+    </nav>
+    <div class="text-box">
+      <h1>Our goal</h1>
+      <p>
+        According to the Allergy Asthma Center of Austin, the capital of Texas often finds itself within the top 5 worst places for allergies in the country. 
+        Knowing about your allergens and exactly when they are high is key to staying safe. 
+        Our goal is to make Austin a more allergy-aware community and allow Austinites to enjoy this beautiful city without the endless suffering that allergies bring.
+      </p>
+      <a href="allergeninformation.html" class = "hero-btn" style="position: absolute; left: 3%; bottom: -25%">Common Austin Allergens</a>
+      <a href="locations.html" class = "hero-btn" style="position: absolute; left: 33%; bottom: -25%">Local Clinics</a>
+      <a href="home-remedies.html" class = "hero-btn" style="position: absolute; left: 53.5%; bottom: -25%">Home Remedies</a>
+      <a href="signup.html" class = "hero-btn" style="position: absolute; left: 77%; bottom: -25%">Sign Up For Allergy Alert</a>
+    </div>
+  </section>
+  <script src="main.js"></script>
+</body>
+</html>
